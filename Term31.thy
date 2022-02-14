@@ -2,7 +2,7 @@ theory Term31
 imports Main
 begin
 
-chapter \<open>3.5. Evaluation\<close>
+chapter \<open>3.5 Evaluation\<close>
 
 section \<open>definition\<close>
 
@@ -179,7 +179,7 @@ next
   then show ?case
     oops
 
-section \<open>3.5.11\<^sup>* definition of eval^n\<close>
+section \<open>3.5.11' definition of eval n\<close>
 
 inductive eval_n :: "t \<Rightarrow> nat \<Rightarrow> t \<Rightarrow> bool" ("_ \<mapsto>^_ _" [50,90,50] 40) where
   En0: "t \<mapsto>^0 t"
@@ -249,7 +249,7 @@ qed
 lemma can_eval_suc_inot_normal_form: "\<lbrakk> t \<mapsto>^n t'; n > 0 \<rbrakk> \<Longrightarrow> \<not>(is_normal_form t)"
   by (metis Suc_eq_plus1_left eval_1_step exist_mid_step is_normal_formI less_numeral_extra(3) not0_implies_Suc)
 
-section \<open>3.5.11\<^sup>*\<^sup>* deterministic of eval^n\<close>
+section \<open>3.5.11'' deterministic of eval n\<close>
 
 theorem eval_n_deterministic: "\<lbrakk> t \<mapsto>^n t'; t \<mapsto>^n t'' \<rbrakk> \<Longrightarrow> t' = t''"
 proof (induct n arbitrary: t t' t'')
@@ -344,3 +344,5 @@ next
   with Cond.hyps(2) Cond.hyps(3) eval_star_trans3 
   show "\<exists>t'. If t1 Then t2 Else t3 \<mapsto>* t' \<and> is_normal_form t'" by blast
 qed
+
+end
