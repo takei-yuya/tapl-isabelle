@@ -1,10 +1,10 @@
-.PHONY: presentation
-presentation:
+.PHONY: docs
+docs:
 	isabelle build -o browser_info -P build -v -d . tapl-isabelle
-	mkdir -p presentation presentation/fonts
-	mv build/fonts/* presentation/fonts/
-	mv build/Unsorted/tapl-isabelle/* presentation/
-	sed "s_url('\.\./\.\./fonts/_url('fonts/_" -i presentation/isabelle.css
-	rm presentation/session_graph.pdf
-	rm presentation/index.html
+	mkdir -p docs docs/fonts
+	mv build/fonts/* docs/fonts/
+	mv build/Unsorted/tapl-isabelle/* docs/
+	sed "s_url('\.\./\.\./fonts/_url('fonts/_" -i docs/isabelle.css
+	rm docs/session_graph.pdf
+	rm docs/index.html
 	rm -rf build
