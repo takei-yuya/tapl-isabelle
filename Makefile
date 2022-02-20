@@ -5,6 +5,4 @@ docs:
 	mv build/fonts/* docs/fonts/
 	mv build/Unsorted/tapl-isabelle/* docs/
 	sed "s_url('\.\./\.\./fonts/_url('fonts/_" -i docs/isabelle.css
-	rm docs/session_graph.pdf
-	rm docs/index.html
 	rm -rf build
