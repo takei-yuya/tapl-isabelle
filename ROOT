@@ -1,4 +1,3 @@
 session "tapl-isabelle" = HOL +
-
-theories
-  Term31
+  theories
+    Term31
